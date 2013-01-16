@@ -1,4 +1,4 @@
 touchwipe-crazyphoton
 =====================
 
-Jquery touchwipe (http://www.netcu.de/jquery-touchwipe-iphone-ipad-library) with more control. Useful for smart scrollers, that show new content based on amount of swipe
+Extension of Jquery touchwipe plugin (http://www.netcu.de/jquery-touchwipe-iphone-ipad-library) with more control over tracking amount of swipe. Useful for smart scrollers, that "scroll" based on extent of swipe, especially in tablets. Tested on Galaxy 10.1. 
