@@ -1,18 +1,5 @@
-/**
-* jQuery Plugin to obtain touch gestures from iPhone, iPod Touch and iPad, should also work with Android mobile phones (not tested yet!)
-* Common usage: wipe images (left and right to show the previous or next image)
-*
-* @author Josh Stafford
-* @version 1.3
-*
-* @author Nishanth Sudharsanam
-* @version 1.2 Allowed tracking of amount of swipe which is passed to the callback.
-*
-* @author Andreas Waltl, netCU Internetagentur (http://www.netcu.de)
-* @version 1.1.1 (9th December 2010) - fix bug (older IE's had problems)
-* @version 1.1 (1st September 2010) - support wipe up and wipe down
-* @version 1.0 (15th July 2010)
-*/
+/*! jquery.touchwipe - v1.3.0 - 2015-01-08
+* Copyright (c) 2015 Josh Stafford; Licensed MIT */
 (function($) {
   $.fn.touchwipe = function(settings) {
     var config = {
@@ -27,7 +14,9 @@
       preventDefaultEventsY: false // prevent default is touchwipe is triggered on vertical movement
     };
 
-    if (settings) $.extend(config, settings);
+    if (settings) {
+      $.extend(config, settings);
+    }
 
     this.each(function() {
       var startX;
@@ -44,6 +33,9 @@
       }
 
       function onTouchMove(e) {
+
+        var dxFinal, dyFinal;
+
         if(config.preventDefaultEvents) {
           e.preventDefault();
         }
@@ -94,7 +86,7 @@
       }
 
       function onTouchStart(e) {
-        if (e.touches.length == 1) {
+        if (e.touches.length === 1) {
           startX = e.touches[0].pageX;
           startY = e.touches[0].pageY;
           isMoving = true;
